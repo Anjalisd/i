@@ -1,0 +1,36 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="background-color:white;">
+      <h3> Add new products to the list</h3>
+      
+    </div>
+    <form name="myForm" >
+      <div class="col-sm-6">
+      
+        <label><b>Name </b></label><br>
+        <input type="text" placeholder="Enter name" name="pname" ng-model="product.Name" required /><br>
+        <div ng-messages="myForm.pname.$dirty && myForm.pname.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+       </div> 
+        <label><b>Details</b></label><br>
+        <input type="text" placeholder="Enter details of product" name="pdetails" ng-model="product.Details" ng-maxlength="20" required /><br>
+         <div ng-messages="myForm.pdetails.$dirty && myForm.pdetails.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+        <div>
+        <label><b>Price</b></label><br>
+        <input type="number" placeholder="Enter your age" name="price" ng-model="product.Price" ng-minlength="3"  ng-maxlength="7" required />
+        <div ng-messages="myForm.price.$dirty && myForm.price.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          <div ng-message when="minlength">Your field is too short</div>
+          <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+        </div>
+        <button type="submit" ng-click="createProduct(product)" ng-disabled="myForm.$invalid || product.dataloading" class="btn btn-primary" >Add</button>
+      </div>
+    </form>
+  </div>
+</div>

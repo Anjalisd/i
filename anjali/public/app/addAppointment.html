@@ -1,0 +1,37 @@
+<div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="background-color:white;">
+      <h2>Take an appointment here</h2>
+      
+    </div>
+    <form name="myForm" >
+      <div class="col-sm-6">
+      
+        <label><b>Name </b></label><br>
+        <input type="text" placeholder="Enter name" name="pname" ng-model="appoint.patientName" required /><br>
+        <div ng-messages="myForm.pname.$dirty && myForm.pname.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+       </div> 
+        <label><b>Doctor Name</b></label><br>
+        <input type="text" placeholder="Enter name of doctor" name="dname" ng-model="appoint.doctorName" ng-maxlength="20" required /><br>
+         <div ng-messages="myForm.dname.$dirty && myForm.dname.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+        <div>
+        <label><b>Your City</b></label><br>
+        <input type="text" placeholder="Enter your city" name="city" ng-model="appoint.city" ng-minlength="4"  ng-maxlength="7" required />
+        <div ng-messages="myForm.city.$dirty && myForm.city.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          <div ng-message when="minlength">Your field is too short</div>
+          <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+        </div>
+        <button type="submit" ng-click="createAppointment(appoint)" ng-disabled="myForm.$invalid || appoint.dataloading" class="btn btn-primary" >Request</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
