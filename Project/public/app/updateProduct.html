@@ -1,0 +1,34 @@
+
+<div class="container" ng-init="getProductdetails()">
+  <div class="row">
+    <div class="col-sm-6"  style="background-color:white;">
+      <h3> update</h3>
+      
+    </div>
+    <form name="myForm" >
+      <div class="col-sm-6" style="background-color:pink;">
+        <label><b>Name </b></label><br>
+        <input type="text" placeholder="Enter name" name="pname" ng-model="product.Name" ><br>
+        <div ng-messages="myForm.pname.$error" style="color:red" role="alert">
+          <div ng-message="required">You did not enter a field</div>
+          <div ng-message="maxlength">Your field is too long</div>
+        </div>
+        <label><b>Details</b></label><br>
+        <input type="text" placeholder="Enter details of product" name="pdetails" ng-model="product.Details" ng-maxlength="7" ><br>
+        <div ng-messages="myForm.pdetails.$error" style="color:red" role="alert">
+          <div ng-message="required">You did not enter a field</div>
+          <div ng-message="maxlength">Your field is too long</div>
+        </div>
+        <label><b>Price</b></label><br>
+        <input type="number" placeholder="Enter price" name="price" ng-model="product.Price"  ng-minlength="3"  ng-maxlength="7" ><br>
+        <div ng-messages="myForm.price.$error" style="color:red" role="alert">
+          <div ng-message="required">You did not enter a field</div>
+          <div ng-message="minlength">Your field is too short</div>
+          <div ng-message="maxlength">Your field is too long</div>
+        </div>
+        <br>
+        <button type="submit" ng-click="editProduct(product)" class="btn btn-primary" >Update</button>
+      </div>
+    </form>
+  </div>
+</div>

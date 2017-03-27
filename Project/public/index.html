@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html ng-app="myApp" >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"  href="files/js/bootstrap.min.css">
+  <link rel="stylesheet"  href="files/js/angular-toastr.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="files/js/jquery-3.1.1.min.js"></script>
+  <script src="files/js/bootstrap.min.js"></script>
+  <script src="files/js/angular.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.2.0/toaster.js"></script> -->
+   <script src="files/js/dirPagination.js"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular-animate.min.js" ></script>
+  <script src="files/js/angular-toastr.js"></script>
+   
+  <script src="files/js/angular-resource.js"></script>
+  <script src="files/js/angular-ui-router.js"></script>
+
+   <script src="files/js/angular-messages.js"></script>
+  <script src="files/js/app.js"></script>
+  <script src="files/js/script.js"></script>
+  <script src="files/js/controller.js"></script>
+ 
+  
+  
+  
+</head>
+<body >
+    <div ui-view="header"></div>
+    <!-- <nav class="navbar navbar-inverse"> -->
+      <div class="container-fluid" >
+        <!-- <ul class="nav navbar-nav">
+          
+          <li ><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="aboutus" >About Us</a></li>
+          <li><a ui-sref="dns">Departments And Services</a></li>
+          <li><a ui-sref="patients" ng-if="isuserlogin" >Patients</a></li>
+           <li><a ui-sref="addAppointment" ng-if="isuserlogin" >Request Appointment</a></li>
+           <li><a ui-sref="appointments" ng-click="getAppointments()" ng-if="isuserlogin" >Appointments</a></li>
+           <li><a ui-sref="adminUsers">Admin</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="patient" ng-click="loggedUser()" ng-if="isuserlogin">My Profile</a></li>
+          <li ><a ui-sref="login" ng-if="!isuserlogin">LogIn</a></li>
+          <li ><a ui-sref="adminLogin" >Admin LogIn</a></li>
+          <li ><a ng-click="logout()" ng-if="isuserlogin">LogOut</a></li>
+          <li><a ui-sref="register" ng-if="!isuserlogin">Register</a></li>
+        </ul>
+      </div></nav> -->
+    
+      <div ui-view="content"></div>
+      <div ui-view="footer"></div>
+    </body>
+  </html>

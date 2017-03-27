@@ -1,0 +1,27 @@
+<div ng-init="logUser()" ng-controller="AppointmentsCtrl" >
+<center><table class="table table-hover table-striped table-bordered" style="width: 70%">
+    <thead>
+        <tr>
+            <!--<td><B>Id</B></td>-->
+            <td><B>Your Name</B></td>
+            <td><B>Doctor Name</B></td>
+            <td><B>City</B></td>
+            <td><B>contact</B></td>
+            <td><B>Delete</B></td>
+            <!-- <td><B>Update</B></td> -->
+        </tr>
+    </thead>
+    <tbody>
+    
+       
+        <!--<td>{{ user._id }}</td>-->
+            <td>{{ appointment.patientName }}</td>
+            <td>{{ appointment.doctorName }}</td>
+            <td>{{ appointment.city }}</td>
+            <td>{{ appointment.contact }}</td>
+            <td ><button class="btn btn-primary" ng-click="deleteAppointment(appointment._id)" >Delete</button></td>
+           <!--  <td><button class="btn btn-primary" ng-click="updateAppointment(appointment._id)" >Edit</button></td> -->
+        </tr>
+    </tbody>
+</table></center>
+</div>

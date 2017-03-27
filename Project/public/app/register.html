@@ -1,0 +1,45 @@
+<div class="container">
+<div class="row">
+  <div class="col-sm-6" style="background-color:white;">
+    <h3> Reister here...</h3>
+    <p> For getting facility and health tips..</p>
+  </div>
+  <form ng-submit="submit(patient)" name="signupForm">
+    <div class="col-sm-6" style="background-color:pink;">
+      <label><b>Username:</b></label><br>
+      <input type="text" placeholder="Enter name" name="uname" ng-model="patient.username" required><br>
+      <div ng-messages="signupForm.uname.$dirty && signupForm.uname.$error" style="color:red" role="alert">
+        <div ng-message when="required">You did not enter a field</div>
+      </div>
+      <label><b>Password:</b></label><br>
+      <input type="password" placeholder="Enter Password" name="psw" ng-model="patient.password" ng-minlength="4" required><br>
+      <div ng-messages="signupForm.psw.$dirty && signupForm.psw.$error" style="color:red" role="alert">
+        <div ng-message when="required">You did not enter a field</div>
+        <div ng-message when="minlength">You entered a field is too small.</div>
+      </div>
+      <!-- <label><b>ConfirmPassword:</b></label><br>
+      <input type="password" placeholder="Enter Password" name="psw" ng-model="patient.confirmpassword" required><br> -->
+      <label><b>Contact:</b></label><br>
+      <input type="number" placeholder="Enter number" name="contact" ng-model="patient.contact" max="9999999999" min="1000000000" required/><br>
+      <div ng-messages="signupForm.contact.$dirty && signupForm.contact.$error" style="color:red" role="alert">
+        <div ng-message ="number">You did not enter a field</div>
+        <div ng-message ="min">Your field is too short</div>
+        <div ng-message ="max">Your field is too long</div>
+      </div>
+      <label><b>Age:</b></label><br>
+      <input type="number" placeholder="Enter your age" name="age" ng-model="patient.age" min="15" required><br>
+      <div ng-messages="signupForm.age.$dirty && signupForm.age.$error" style="color:red" role="alert">
+        <div ng-message="number">Enter number</div>
+        <div ng-message="min">Your age shoulde not be less than 15</div>
+      </div>
+      <label><b>City:</b></label><br>
+      <input type="text" placeholder="Enter city" name="city" ng-model="patient.city" required><br>
+      <div ng-messages="signupForm.city.$dirty && signupForm.city.$error" style="color:red" role="alert">
+        <div ng-message when="required">You did not enter a field</div>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid || patient.dataloading">Submit</button>
+    </div>
+  </form>
+</div>
+</div>
