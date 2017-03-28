@@ -1,0 +1,28 @@
+<!-- <head>
+  <link rel="stylesheet" href="style.css">
+</head> -->
+<header  ng-app="myApp" ng-controller="MainCtrl">
+  <!-- <img class="image-responsive"  src="images/logo3.jpeg"  style="padding-bottom: 2em; width: 100px; height:100px; float: left;"> -->
+  <h3 style="text-align: right">contact us:  </h3>
+  <h1><center>Health & Care Hospital</center></h1>
+  <nav class="navbar navbar-inverse" style="width: 100%;">
+    <ul class="nav navbar-nav">
+      <li ><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="aboutus" >About Us</a></li>
+      <li><a ui-sref="dns">Departments And Services</a></li>
+      <li><a ui-sref="addAppointment" ng-if="isuserlogin" >Request Appointment</a></li>
+      <li><a ui-sref="patients" ng-if="isadminlogin " >Patients</a></li>
+      <li><a ui-sref="appointments" ng-click="!getAppointments()" ng-if="
+          isadminlogin" >Appointments</a></li>
+          <li><a ui-sref="adminUsers" ng-if="isadminlogin">Admin Users</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref="patient" ng-click="loggedUser()" ng-if="isuserlogin">My Profile</a></li>
+            <!-- <li><a ui-sref="appointment" ng-click="logUser()" ng-if="isuserlogin">My Appointments</a></li> -->
+      <li ><a ui-sref="login" ng-if="!isuserlogin && !isadminlogin">LogIn</a></li>
+     <!--  <li ><a ui-sref="adminLogin" ng-if="!isuserlogin" >Admin LogIn</a></li> -->
+      <li ><a href="#" ng-click="logout()" ng-if="isuserlogin || isadminlogin ">LogOut</a></li>
+      <li><a ui-sref="register" ng-if="!(isuserlogin || isadminlogin)">Register</a></li>
+    </ul>
+  </nav>
+</header>

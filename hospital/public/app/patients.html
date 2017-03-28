@@ -1,0 +1,26 @@
+<label>Search: <input ng-model="searchText"></label>
+<div ng-init="getPatients()" ng-controller="GetpatientsCtrl">
+    <center><table class="table table-hover table-striped table-bordered" style="width: 70%">
+        <thead>
+            <tr>
+                <td><B>Patient Name</B></td>
+                <td><B>Age</B></td>
+                <td><B>City</B></td>
+                <td><B>contact</B></td>
+                <td><B>Delete</B></td>
+                <td><B>Update</B></td> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr dir-paginate="patient in patients | filter:searchText | itemsPerPage:4"">
+                <td>{{ patient.username }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.city }}</td>
+                <td>{{ patient.contact }}</td>
+                <td ><button class="btn btn-primary" ng-click="deletePatient(patient._id)" >Delete</button></td>
+                <td><button class="btn btn-primary" ng-click="updatePatient(patient._id)" >Edit</button></td>
+            </tr>
+        </tbody>
+    </table><dir-pagination-controls max-size="4" direction-links="true" boundary-links="true">
+    </dir-pagination-controls></center>
+</div>

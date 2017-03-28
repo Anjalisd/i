@@ -1,0 +1,47 @@
+<div class="col-md-6 col-md-offset-3" ng-init="getdentistDetails()" style="background-color:Khaki";>
+  
+  <h3>update Details</h3>
+  <form ng-submit="editDentist(dentist)" name="UpdateForm">
+    
+    <!-- <button ng-disabled="!UpdateForm.$valid"
+    ng-click="uploadPic(picFile)">Submit</button> -->
+    
+    <label><b>Your Name</b></label><br>
+    <input type="text" placeholder="Enter name" name="pname" ng-model="dentist.doctorName" required /><br>
+    <div ng-messages="UpdateForm.pname.$dirty && UpdateForm.pname.$error" style="color:red" role="alert">
+      <div ng-message when="required">You did not enter a field</div>
+    </div>
+    <label><b>Time</b></label><br>
+    <input type="text" placeholder="Enter time" name="time" ng-model="dentist.time" ng-maxlength="20" required /><br>
+    <div ng-messages="UpdateForm.time.$dirty && UpdateForm.time.$error" style="color:red" role="alert">
+      <div ng-message when="required">You did not enter a field</div>
+      <div ng-message when="maxlength">Your field is too long</div>
+    </div>
+    <div>
+      <label><b>Available Days</b></label><br>
+      <input type="text" placeholder=" " name="day" ng-model="dentist.day"   ng-maxlength="7" required />
+      <div ng-messages="UpdateForm.day.$dirty && UpdateForm.day.$error" style="color:red" role="alert">
+        <div ng-message when="required">You did not enter a field</div>
+        <div ng-message when="minlength">Your field is too short</div>
+        <div ng-message when="maxlength">Your field is too long</div>
+      </div>
+      <label><b>Contact</b></label><br>
+      <input type="number" placeholder="  " name="contact" ng-model="dentist.contact"   ng-maxlength="7" required />
+      <div ng-messages="UpdateForm.contact.$dirty && UpdateForm.contact.$error" style="color:red" role="alert">
+        <div ng-message when="required">You did not enter a field</div>
+        
+        <div ng-message when="maxlength">Your field is too long</div>
+      </div>
+    </div><br>
+    <label><b>Your Image</b></label><br>
+    <input type="file" ngf-select ng-model="picFile" name="file"
+    accept="image/*" ngf-max-size="2MB" required
+    ngf-model-invalid="errorFile">
+    <i ng-show="UpdateForm.file.$error.required"></i><br>
+    <i ng-show="UpdateForm.file.$error.maxSize">File too large
+    {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+    <img ng-show="UpdateForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+    <br>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

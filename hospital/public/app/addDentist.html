@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="background-color:white;">
+      <h3> Add new dentist to the list</h3>
+      
+    </div>
+    <form name="myForm" >
+      <div class="col-sm-6">
+        <label><b>Doctor Name</b></label><br>
+        <input type="text" placeholder="Enter name" name="pname" ng-model="dentist.doctorName" required /><br>
+        <div ng-messages="myForm.pname.$dirty && myForm.pname.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+        </div>
+        <label><b>Time</b></label><br>
+        <input type="text" placeholder="Enter details of product" name="pdetails" ng-model="dentist.time" ng-maxlength="20" required /><br>
+        <div ng-messages="myForm.pdetails.$dirty && myForm.pdetails.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          <div ng-message when="maxlength">Your field is too long</div>
+        </div>
+        <div>
+          <label><b>Available Days</b></label><br>
+          <input type="text" placeholder="Enter your age" name="day" ng-model="dentist.day"   ng-maxlength="7" required />
+          <div ng-messages="myForm.day.$dirty && myForm.day.$error" style="color:red" role="alert">
+            <div ng-message when="required">You did not enter a field</div>
+            <div ng-message when="minlength">Your field is too short</div>
+            <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+          <label><b>Contact</b></label><br>
+          <input type="number" placeholder="  " name="contact" ng-model="dentist.contact"   ng-maxlength="7" required />
+          <div ng-messages="myForm.contact.$dirty && myForm.contact.$error" style="color:red" role="alert">
+            <div ng-message when="required">You did not enter a field</div>
+            <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+        </div>
+        <button type="submit" ng-click="createDentist(dentist)" ng-disabled="myForm.$invalid || dentist.dataloading" class="btn btn-primary" >Add</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3"" style="background-color:Khaki;">
+            <h2> Login </h2>
+            <!--  <p> For getting facility and health tips..</p>
+        </div> -->
+        <form ng-submit="login(patient)" name="signupForm">
+            <!--             <div class="col-sm-6" style="background-color:pink;"> -->
+            <label><b>Username:</b></label><br>
+            <input type="text" placeholder="Enter name" name="uname" ng-model="patient.username" required><br>
+            <div ng-messages="signupForm.uname.$dirty && signupForm.uname.$error" style="color:red" role="alert">
+                <div ng-message when="required">You did not enter a field</div>
+            </div>
+            
+            <label><b>Password:</b></label><br>
+            <input type="password" placeholder="Enter Password" name="psw" ng-model="patient.password" required><br>
+            <div ng-messages="signupForm.psw.$dirty && signupForm.psw.$error" style="color:red" role="alert">
+                <div ng-message when="required">You did not enter a field</div>
+            </div>
+            <button type="submit" class="btn btn-primary" >login</button>
+        </div>
+    </form>
+</div>
+</div>

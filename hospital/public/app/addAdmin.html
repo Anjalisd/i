@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="background-color:white;">
+      <h3> Add new Admin to the list</h3>
+      
+    </div>
+    <form name="myForm" >
+      <div class="col-sm-6">
+      
+        <label><b>Your Name</b></label><br>
+        <input type="text" placeholder="Enter name" name="uname" ng-model="adminUser.username" required /><br>
+        <div ng-messages="myForm.uname.$dirty && myForm.uname.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+       </div> 
+        <label><b>Password</b></label><br>
+        <input type="password" placeholder="Enter Password" name="pwd" ng-model="adminUser.password" ng-minlength="5" required /><br>
+         <div ng-messages="myForm.pwd.$dirty && myForm.pwd.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          <div ng-message when="minlength">Your field is too small</div>
+          </div>
+        <div>
+        <label><b>Address</b></label><br>
+        <input type="text" placeholder="Enter your Address" name="Address" ng-model="adminUser.Address"   ng-maxlength="30" required />
+        <div ng-messages="myForm.Address.$dirty && myForm.Address.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          <div ng-message when="minlength">Your field is too short</div>
+          <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+          <label><b>Contact</b></label><br>
+        <input type="number" placeholder="  " name="contact" ng-model="adminUser.contact"   max="9999999999" min="1000000000" required />
+        <div ng-messages="myForm.contact.$dirty && myForm.contact.$error" style="color:red" role="alert">
+          <div ng-message when="required">You did not enter a field</div>
+          
+          <div ng-message when="maxlength">Your field is too long</div>
+          </div>
+        </div>
+        <button type="submit" ng-click="createAdmin(adminUser)" ng-disabled="myForm.$invalid || adminUser.dataloading" class="btn btn-primary" >Add</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div ng-init="getAdminUsers()">
+    <label>Search: <input ng-model="searchText"></label>
+    <button class="btn btn-primary" ng-click="addAdmin()">Add New</button>
+    <br>
+    <table class="table table-hover table-striped table-bordered" style="width: 70%">
+        <thead>
+            <tr>
+                <!--<td><B>Id</B></td>-->
+                <td><B>Username</B></td>
+                <td><B>Address</B></td>
+                <td><B>contact</B></td>
+                <td><B>Delete</B></td>
+                <!-- <td><B>Update</B></td> -->
+            </tr>
+        </thead>
+        <tbody>
+           <tr dir-paginate="adminUser in adminUsers | filter:searchText | itemsPerPage:4">
+                <!--<td>{{ user._id }}</td>-->
+                <td>{{adminUser.username }}</td>
+                <td>{{adminUser.Address }}</td>
+                <td>{{adminUser.contact }}</td>
+                <td ><button class="btn btn-primary" ng-click="deleteAdmin(adminUser._id)" >Delete</button></td>
+                <!-- <td><button class="btn btn-primary" ng-click="updateAdmin(adminUser._id)" >Edit</button></td> -->
+            </tr>
+        </tbody>
+    </table>
+    <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true">
+    </dir-pagination-controls>
+</div>
+</div>
