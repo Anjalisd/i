@@ -1,0 +1,49 @@
+<div class="row">
+ <div class="col-lg-3 " align="center"> <img alt="User Pic" src="">
+ </div>
+<div class=" col-lg-9 " ng-init="loggedUser()" ng-controller="MainCtrl">
+<center><table class="table table-hover table-striped table-bordered" style="width: 50%">
+    <thead>
+        <tr>
+            <!--<td><B>Id</B></td>-->
+            <td><B>My Name</B></td>
+             <td>{{ patient.username }}</td>
+             </tr>
+             <tr>
+            <td><B>Age</B></td>
+             <td>{{ patient.age }}</td>
+             </tr>
+             <tr>
+            <td><B>City</B></td>
+              <td>{{ patient.city }}</td>
+              </tr>
+              <tr>
+            <td><B>contact</B></td>
+            <td>{{ patient.contact }}</td>
+            </tr>
+              <tr>
+            <td><B>My Appointments</B></td>
+            <td>{{ patient.appointments }}</td>
+            </tr>
+            <td ><button class="btn btn-primary" ng-click="deletePatient(patient._id)" >Delete</button></td>
+            <td><button class="btn btn-primary" ng-click="updatePatient(patient._id)" >Edit</button></td>
+        </tr>
+    </thead>
+    </table>
+    </center>
+    </div>
+    </div>
+
+    
+        
+        <!--<td>{{ user._id }}</td>-->
+           
+           
+          
+            
+            
+       
+    
+    
+       
+         
